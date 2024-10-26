@@ -30,9 +30,11 @@ Install the following dependencies:
 Then create a `docker.env` file with the following values:
 
 ```env
-POSTGRES_USER=my_user
-POSTGRES_PASSWORD=secret_psswd
-POSTGRES_DB=awesome_db
+MYSQL_ALLOW_EMPTY_PASSWORD=yes
+MYSQL_USER=my_user
+MYSQL_PASSWORD=my_secret_passwd
+MYSQL_ROOT_PASSWORD=my_ultra_secret_passwd
+MYSQL_DATABASE=my_db_name
 ```
 
 ## Getting Started
