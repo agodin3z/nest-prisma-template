@@ -1,17 +1,14 @@
-version: "3"
 services:
-  postgres:
-    container_name: postgres
-    image: postgres:12
+  db:
+    container_name: mysql
+    image: mysql:8.1
+    restart: always
+    hostname: mysql
     ports:
-    - "5432:5432"
+      - 3306:3306
     volumes:
-    - /data/postgres:/data/postgres
-    env_file:
-    - docker.env
-    networks:
-    - postgres
+      - msqldata:/var/lib/mysql
+    env_file: docker.env
 
-networks:
-  postgres:
-    driver: bridge
+volumes:
+  msqldata:
